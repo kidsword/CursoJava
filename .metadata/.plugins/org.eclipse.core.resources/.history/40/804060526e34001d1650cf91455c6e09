@@ -1,0 +1,21 @@
+package desafios;
+
+public class DesafioLogicos {
+	public static void main(String[] args) {
+
+		var trabalho1 = true;
+		var trabalho2 = true;
+		boolean tomouSorvete = trabalho1 || trabalho2;
+		
+		if(trabalho1 ^ trabalho2) 
+			System.out.print("Compramos televisão de 32 polegadas");
+		else if (trabalho1 && trabalho2)
+			System.out.print("Compramos televisão de 50 polegadas");
+		else
+			System.out.print("Não Compramos nenhuma televisão");
+		
+		
+	}	
+	
+
+}

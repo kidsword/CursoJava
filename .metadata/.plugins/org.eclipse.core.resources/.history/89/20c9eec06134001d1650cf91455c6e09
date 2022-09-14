@@ -1,0 +1,25 @@
+package fundamentos;
+
+public class Conversoes {
+	public static void main(String[] args) {
+		double a = 1;
+		System.out.println(a);
+		
+		//FLOAT
+		float b = (float) 1.1234556;
+		System.out.println(b);
+		b = 12234.5432F;
+		System.out.println(b);
+		
+		//INT
+		int c =4;
+		byte d = (byte)c;
+		System.out.println(d);
+		
+		
+		Integer num1 = 10000;
+		System.out.println(num1.toString().length());
+		
+	}
+
+}

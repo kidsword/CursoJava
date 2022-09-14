@@ -1,0 +1,17 @@
+package fundamentos;
+
+public class NextIntNextDouble {
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(system.n);
+		 
+		System.out.println("Qual a sua idade?");
+		int idade = teclado.nextInt();
+		System.out.println("Qual o seu nome?");
+		string nome = teclado.nextLine();
+		System.out.println("Qual o seu sobrenome?");
+		string sobrenome = teclado.nextLine();
+		 
+		teclado.close();
+	}
+
+}
