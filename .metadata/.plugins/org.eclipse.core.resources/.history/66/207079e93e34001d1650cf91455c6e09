@@ -1,0 +1,21 @@
+package fundamentos;
+
+public class PrimeiroPrograma {
+	/**
+	 * javadoc string - gera um xml comn a documentação do código
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("Vai Curíntia!!!");
+		//Ctrl+Shift+F -> Acerta identação
+		
+		//Package (Pacote) = NameSpace
+		/**
+		 * Comentário de mais de uma linha
+		 * Ctrl+/ comenta código
+		 * 
+		 * */
+
+	}
+}

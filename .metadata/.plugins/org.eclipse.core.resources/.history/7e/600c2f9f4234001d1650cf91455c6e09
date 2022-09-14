@@ -1,0 +1,21 @@
+package fundamentos;
+
+public class Temperatura {
+	public static void main(String[] args) {
+		final double ajuste = 32.0;
+		final double fator= 5.0/9.0;
+		double temperFarenheit = 10.0;
+		double result = (temperFarenheit - ajuste) * fator;
+		
+		PrintCelsius(result);
+		
+		
+		
+	}
+	
+	private static void PrintCelsius(double value ) {
+		
+		System.out.println("O resultado é "+ value + "ºC.");
+	}
+
+}
