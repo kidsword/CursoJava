@@ -1,0 +1,31 @@
+package exercicios.secao4;
+
+import java.util.Scanner;
+
+public class CheckaPrimo {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Informe um número: ");
+		int n = scan.nextInt();
+
+		
+		if(n <= 1)
+			
+		
+		
+		var media = (nota1 + nota2) /2; 
+				
+		System.out.print("Sua média foi: " + media + ". Está ");
+		
+		if (media >= 7.0) {
+			System.out.println("Aprovado");
+		}
+		else if(media >= 4.0 && media < 7.0)
+			System.out.println("de Recuperação");
+		else {
+			System.out.println("Reprovado");
+		}
+		scan.close();
+	}
+}
