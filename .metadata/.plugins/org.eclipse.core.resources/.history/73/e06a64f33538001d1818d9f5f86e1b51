@@ -1,0 +1,30 @@
+package exercicios.secao3;
+
+import java.util.Scanner;
+
+public class Bhaskara {
+	public static void main(String[] args) {
+		Scanner ent = new Scanner(System.in);
+		
+		System.out.println("Informe o valor \"a\": ");
+		double a = ent.nextDouble();
+		System.out.println("Informe o valor \"b\": ");
+		double b = ent.nextDouble();
+		System.out.println("Informe o valor \"c\": ");
+		double c = ent.nextDouble();
+		
+		double superior = -b + Math.sqrt(Math.pow(b, 2) - (4*a*c)) / 2*a;
+		
+		double inferior = 2*a;
+		
+		var result = superior / inferior;
+		
+
+		var stringmodel = "O Delta para os números a=%2.f, b=%2.f e c=%2.f é %2.f";
+		
+		System.out.println(String.format(stringmodel, a, b, c, result));
+
+		
+	}
+
+}
