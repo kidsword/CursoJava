@@ -3,7 +3,7 @@ package exercicios.secao4;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Exercicio7 {
+public class Exercicio8 {
 	public static void main(String[] args) {
 		/**
 		 * 7. Criar um programa que enquanto estiver recebendo números positivos, imprime no console a soma dos números inseridos, 

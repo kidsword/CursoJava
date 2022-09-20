@@ -19,7 +19,6 @@ public class Exercicio7 {
 			userValue = scan.nextInt();
 			if(userValue > 0)
 				total += userValue;
-			System.out.println();
 			System.out.println("Soma dos valores informados: " + (total));			
 			
 		} while (userValue >= 0);
