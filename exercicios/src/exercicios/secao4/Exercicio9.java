@@ -1,7 +1,6 @@
 package exercicios.secao4;
 
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Exercicio9 {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package desafios;
+package desafios.secao3;
 
 import java.util.Scanner;
 

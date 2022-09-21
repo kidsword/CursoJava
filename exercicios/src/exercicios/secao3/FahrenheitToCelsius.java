@@ -11,6 +11,7 @@ public class FahrenheitToCelsius {
 		
 		double temperCelsius = ConvetToCelsius(temperFarenheit);
 		PrintCelsius(temperCelsius);
+		ent.close();
 	}
 
 	private static double ConvetToCelsius(double temperFarenheit) {

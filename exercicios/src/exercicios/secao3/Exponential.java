@@ -14,6 +14,7 @@ public class Exponential {
 		System.out.println(String.format(stringmodel, num, (char) 178, Math.pow(num, 2)));
 		System.out.println(String.format(stringmodel, num, (char) 179,  Math.pow(num, 3)));
 
+		ent.close();
 		
 	}
 

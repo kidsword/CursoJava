@@ -1,11 +1,11 @@
-package desafios;
+package desafios.secao3;
 
 public class DesafioAritimeticos {
 	public static void main(String[] args) {
 
 		Desafio();
 		
-		
+		DesafioMeu();
 		
 	}
 	

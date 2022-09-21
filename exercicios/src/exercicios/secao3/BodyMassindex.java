@@ -16,6 +16,7 @@ public class BodyMassindex {
 		double result = peso / Math.pow(altura/100, 2);
 		
 		System.out.println(String.format("Seu Índice de Massa Muscular (IMC) é: %.2f", result));
+		ent.close();
 		
 	}
 

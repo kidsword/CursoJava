@@ -1,4 +1,4 @@
-package desafios;
+package desafios.secao3;
 
 import java.util.Scanner;
 
@@ -29,7 +29,7 @@ public class DesafioCalculadora {
 		
 		System.out.println(String.format("O resultado ds operação \"%.2f %s %.2f\" é igual a %f", num1, op, num2, result) );
 		
-		
+		ent.close();
 		
 	}
 }

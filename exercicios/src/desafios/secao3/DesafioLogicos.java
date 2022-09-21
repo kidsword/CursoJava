@@ -1,4 +1,4 @@
-package desafios;
+package desafios.secao3;
 
 public class DesafioLogicos {
 	public static void main(String[] args) {

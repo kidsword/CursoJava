@@ -14,6 +14,7 @@ public class TriangleAreaCalculator {
 		var stringmodel = "A área do triângulo é de %.2f cm%s";
 		
 		System.out.println(String.format(stringmodel, base * altura / 2, (char)178 ));
+		ent.close();
 
 		
 	}
