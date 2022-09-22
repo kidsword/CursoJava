@@ -1,20 +1,20 @@
 package oo.composicao;
 
 public class Carro {
-	Motor motor = new Motor();
+	public Motor motor = new Motor();
 	
-	void acelerar() {
+	public void acelerar() {
 		motor.fatorinjecao += 0.4;
 	}
-	void frear() {
+	public void frear() {
 		if(motor.fatorinjecao > 0.5)
 			motor.fatorinjecao -= 0.4;
 	}
-	void onOff() {
+	public void onOff() {
 		motor.ligado = !motor.ligado;
 	}
 	
-	boolean estaLigado() {
+	public boolean estaLigado() {
 		return motor.ligado;
 	}
 	

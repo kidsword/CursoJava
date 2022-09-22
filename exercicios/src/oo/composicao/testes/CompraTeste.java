@@ -1,4 +1,7 @@
-package oo.composicao;
+package oo.composicao.testes;
+
+import oo.composicao.Compra;
+import oo.composicao.Item;
 
 public class CompraTeste {
 	public static void main(String[] args) {
