@@ -1,11 +1,8 @@
 package desafios.secao8;
 
 import lambdas.predicado.Produto;
-import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.function.ToDoubleFunction;
-import java.util.function.BiFunction;
 import java.util.function.UnaryOperator;
 
 public class Desafio {

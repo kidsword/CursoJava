@@ -1,5 +1,5 @@
 package fundamentos;
-
+@SuppressWarnings("NotacaoPonto")
 public class NotacaoPonto {
 	public static void main(String[] args) {
 		double a = 2.3;

@@ -1,7 +1,5 @@
 package excecoes;
 
-import javax.management.RuntimeErrorException;
-
 public class ChecadavsNaoChecada {
 	public static void main(String[] args) {
 		try {
