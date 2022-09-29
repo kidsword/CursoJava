@@ -26,6 +26,10 @@ public class Campo {
 		this.coluna = coluna;
 	}
 	
+	public void setAberto(boolean aberto) {
+		this.aberto = aberto;
+	}
+
 	Predicate<Campo> notMined = v -> !v.minado; 
 
 	public boolean add(Campo vizinho) {
@@ -69,9 +73,9 @@ public class Campo {
 			if (this.securityNeighbors()) {
 				vizinhos.forEach(v -> v.open());
 			}
-			else {
+			/*else {
 				vizinhos.stream().filter(notMined).forEach(v -> v.open());
-			}
+			}*/
 			return true;
 		}
 
@@ -125,15 +129,31 @@ public class Campo {
 	public String toString(){
 		var mines = minesOnNeighborhood();
 		if(marcado)
-			return "X";
+			return setColor("X", ConsoleColors.YELLOW);
 		else if (aberto && minado)
 			return "*";
 		else if ( aberto &&  mines > 0)
-			return Long.toString(mines);
+			return setColor(mines);
 		else if (aberto)
 			return " ";
 		else
 			return "?";		
+	}
+	
+	private String setColor(String text, String color) {
+		return color + text + ConsoleColors.RESET ; 
+	}
+	
+	private String setColor(long value) {
+		var val = Long.toString(value);
+		switch((int)value) {
+			case 1:
+				return setColor(val, ConsoleColors.GREEN);
+			case 2:
+				return setColor(val, ConsoleColors.YELLOW);
+			default:
+				return setColor(val, ConsoleColors.RED);
+		}		 
 	}
 
 }
