@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 import java.util.function.ToDoubleFunction;
 
 import utils.Messenger;
-
+@SuppressWarnings(value = { "unused" })
 public class Predicado extends Messenger {
 	public static void main(String[] args) {
 		

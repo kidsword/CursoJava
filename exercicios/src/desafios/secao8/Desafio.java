@@ -4,7 +4,7 @@ import lambdas.predicado.Produto;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
-
+@SuppressWarnings(value = { "unused" })
 public class Desafio {
 	public static void main(String[] args) {
 		/*

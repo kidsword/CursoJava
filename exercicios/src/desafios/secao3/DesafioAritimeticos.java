@@ -1,5 +1,6 @@
 package desafios.secao3;
 
+@SuppressWarnings(value = { "unused" })
 public class DesafioAritimeticos {
 	public static void main(String[] args) {
 

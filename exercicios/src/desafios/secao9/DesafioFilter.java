@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
-
+@SuppressWarnings(value = { "unused" })
 public class DesafioFilter {
 	public static void main(String[] args) {
 		Aluno a1 = new Aluno("Ana", 7.8, enSexo.feminino, 39);
