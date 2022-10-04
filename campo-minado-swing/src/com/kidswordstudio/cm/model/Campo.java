@@ -40,7 +40,11 @@ public class Campo {
 			notifyObservers(CampoEvento.Abrir);
 	}
 
-	Predicate<Campo> notMined = v -> !v.minado; 
+	public boolean isMarcado() {
+		return marcado;
+	}
+
+	Predicate<Campo> notMined = v -> v.isMined(); 
 
 	public boolean add(Campo vizinho) {
 		var linDiff = linha != vizinho.linha;
@@ -68,14 +72,14 @@ public class Campo {
 	/**
 	 * 
 	 */
-	void turnMark() {
+	public void turnMark() {
 		if (!aberto) {
 			marcado = !marcado;
 			notifyObservers(marcado ? CampoEvento.Marcar : CampoEvento.Desmarcar);
 		}
 	}
 
-	boolean open() {
+	public boolean open() {
 		if (!aberto && !marcado) {
 			if (minado) {
 				//TODO implementar nova versao *** Exemplo
@@ -98,7 +102,7 @@ public class Campo {
 	}
 	
 
-	boolean securityNeighbors() {
+	public boolean securityNeighbors() {
 		return vizinhos.stream().noneMatch(notMined);
 	}
 	
@@ -138,8 +142,8 @@ public class Campo {
 		return desvendado || protegido;		
 	}
 	
-	long minesOnNeighborhood() {
-		return vizinhos.stream().filter(v -> v.minado).count();
+	public long minesOnNeighborhood() {
+		return vizinhos.stream().filter(v -> v.isMined()).count();
 	}
 	public String toString(){
 		var mines = minesOnNeighborhood();

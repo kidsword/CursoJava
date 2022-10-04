@@ -3,9 +3,10 @@ package com.kidswordstudio.cm.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class Tabuleiro {
+public class Tabuleiro implements CampoObservador {
 	
 
 	
@@ -14,6 +15,16 @@ public class Tabuleiro {
 	private int minas;
 
 	private final List<Campo> campos = new ArrayList<>();
+	private final List<Consumer<Boolean>> observadores = new ArrayList<>();
+	
+
+	public int getLinhas() {
+		return linhas;
+	}
+
+	public int getColunas() {
+		return colunas;
+	}
 
 	public Tabuleiro(int linhas, int colunas, int minas) {
 		super();
@@ -24,11 +35,25 @@ public class Tabuleiro {
 		associateNeighborhood();
 		sortMines();
 	}
+	
+	public void paraCada(Consumer<Campo> funcao) {
+		campos.forEach(funcao);
+	}
+	
+	public void registerObserver(Consumer<Boolean> obs) {
+		observadores.add(obs);
+	}
+	
+	public void notifyObservers(boolean result) {
+		observadores.stream().forEach(o-> o.accept(result));
+	}
 
 	private void generateFields() {
 		for (int l = 0; l < linhas; l++) {
 			for (int c = 0; c < colunas; c++) {
-				campos.add(new Campo(l, c));
+				var campo = new Campo(l, c);
+				campo.registerObs(this);
+				campos.add(campo);
 			}
 		}
 	}
@@ -46,8 +71,9 @@ public class Tabuleiro {
 		Predicate<Campo> mined = c -> c.isMined();
 
 		do {
-			var rndPosition = new Random().nextInt(0, totalFields - 1);
-			// var rndPosition = (int)(Math.random() * campos.size());0,0
+			var rndPosition = new Random().nextInt(0, campos.size());
+			//var rndPosition = (int)(Math.random() * campos.size());
+			//System.out.printf("\rMinas: %s - nova: %d", campos.toString(), rndPosition);
 			campos.get(rndPosition).toMine();
 			armedMines = campos.stream().filter(mined).count();
 
@@ -82,6 +108,7 @@ public class Tabuleiro {
 	}
 
 	public String toString() {
+
 		var sb = new StringBuilder();
 		var i = 0;
 
@@ -103,5 +130,25 @@ public class Tabuleiro {
 		}
 
 		return sb.toString();
+	}
+	
+	@Override
+	public void eventoOcorreu(Campo c, CampoEvento e) {
+		if(e == CampoEvento.Explodir) {
+			System.out.println("Perdeu...");
+			showMines();
+			this.notifyObservers(false);			
+		}
+		else if(goalAchieved()) {
+			System.out.println("Ganhou...");
+			this.notifyObservers(true);
+		}
+	}
+	void showMines() {
+		campos.stream()
+		.filter(c->c.isMined())
+		.filter(c->!c.isMarcado())
+		.forEach(c->c.setAberto(true));
+		
 	}
 }
