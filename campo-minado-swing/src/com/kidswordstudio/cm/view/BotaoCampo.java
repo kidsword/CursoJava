@@ -11,7 +11,7 @@ import com.kidswordstudio.cm.model.Campo;
 import com.kidswordstudio.cm.model.CampoEvento;
 import com.kidswordstudio.cm.model.CampoObservador;
 
-@SuppressWarnings("serial")
+@SuppressWarnings({"serial", "unused"})
 public class BotaoCampo extends JButton implements CampoObservador, MouseListener{
 	
 	private final Color BG_PADRAO = new Color(184,184,184);
@@ -51,6 +51,7 @@ public class BotaoCampo extends JButton implements CampoObservador, MouseListene
 
 	private void aplicarEstiloPadrao() {
 		setBackground(BG_PADRAO);
+		setBorder(BorderFactory.createBevelBorder(0));
 		setText("");		
 	}
 

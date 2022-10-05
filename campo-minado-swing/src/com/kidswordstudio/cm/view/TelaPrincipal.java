@@ -1,11 +1,10 @@
 package com.kidswordstudio.cm.view;
 
-import java.awt.Font;
-
 import javax.swing.JFrame;
 
 import com.kidswordstudio.cm.model.Tabuleiro;
 
+@SuppressWarnings("serial")
 public class TelaPrincipal extends JFrame {
 	public TelaPrincipal() {
 		

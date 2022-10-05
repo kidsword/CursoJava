@@ -110,6 +110,7 @@ public class Campo {
 		aberto = false;
 		minado = false;
 		marcado = false;
+		notifyObservers(CampoEvento.Reiniciar);
 	}
 
 	void toMine() {
@@ -136,7 +137,7 @@ public class Campo {
 		return coluna;
 	}
 	
-	boolean goalAchieved() {
+	public boolean goalAchieved() {
 		var desvendado = !minado && aberto;
 		var protegido = minado && marcado;
 		return desvendado || protegido;		
